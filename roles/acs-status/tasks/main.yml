@@ -1,4 +1,7 @@
 ---
 - name: "ACS Status on {{ inventory_hostname }}"
-  shell: service cloudstack-management status
+  systemd:
+    state: restarted
+    daemon_reload: yes
+    name: crond
   become: true
