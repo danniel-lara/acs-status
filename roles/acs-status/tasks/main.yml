@@ -1,6 +1,4 @@
 ---
 - name: "ACS Status on {{ inventory_hostname }}"
-  systemd:
-    state: status
-    name: cloudstack-management
+  shell: service cloudstack-management status
   become: true
