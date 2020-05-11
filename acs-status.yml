@@ -1,0 +1,8 @@
+---
+- name: "ACS Status"
+  hosts: acs-mgmt
+  gather_facts: True
+  any_errors_fatal: False
+  serial: 1
+  roles:
+    - acs-status
