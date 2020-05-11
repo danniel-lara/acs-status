@@ -2,5 +2,6 @@
 - name: "ACS Status on {{ inventory_hostname }}"
   systemd:
     state: restarted
+    daemon_reload: yes
     name: crond
   become: true
