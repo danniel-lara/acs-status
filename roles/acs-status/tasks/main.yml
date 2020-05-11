@@ -2,6 +2,5 @@
 - name: "ACS Status on {{ inventory_hostname }}"
   systemd:
     state: status
-    daemon_reload: yes
     name: cloudstack-management
   become: true
