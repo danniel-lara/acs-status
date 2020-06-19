@@ -1,5 +1,5 @@
 ---
-- name: "Restart ACS on {{ inventory_hostname }}
+- name: "Restart ACS on {{ inventory_hostname }}"
   systemd:
     state: restarted
     daemon_reload: yes
