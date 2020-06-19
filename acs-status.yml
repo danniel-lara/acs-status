@@ -1,7 +1,6 @@
 ---
 - name: "ACS Status"
   hosts: acs-mgmt
-  sudo: yes
   gather_facts: True
   any_errors_fatal: False
   serial: 1
