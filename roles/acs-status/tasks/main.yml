@@ -1,7 +1,5 @@
 ---
-- name: "Restart ACS on {{ inventory_hostname }}"
-  sudo: yes
-  sudo_user: root
+- name: "Restart ACS on {{ inventory_hostname }}
   systemd:
     state: restarted
     daemon_reload: yes
