@@ -1,17 +1,7 @@
 ---
-- name: supress repeated message in log file
-  command: "sed -i '/We are good, no orphan management server msid in host table is found/d' /var/log/cloudstack/management/management-server.log"
-  become: true
-  
 - name: "Restart ACS on {{ inventory_hostname }}"
   systemd:
     state: restarted
     daemon_reload: yes
-    name: cloudstack-management
-  become: true
-
-- name: "Wait ACS Finished Initialization on {{ inventory_hostname }}"
-  wait_for:
-    path: /var/log/cloudstack/management/management-server.log
-    search_regex: "We are good, no orphan management server msid in host table is found"
+    name: crond
   become: true
